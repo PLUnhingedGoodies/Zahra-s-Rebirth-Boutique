@@ -1,0 +1,44 @@
+backend:
+  name: git-gateway
+  branch: main # or master, depending on your GitHub repo setup
+media_folder: "assets/images" # Folder where all uploaded images go
+public_folder: "/assets/images" # The public path to those images
+
+collections:
+  # --- 1. Collection Gallery (Flipped Furniture) ---
+  - name: "collection_pieces"
+    label: "Collection Gallery"
+    folder: "_collection"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title (e.g., Mid-Century Velvet Armchair)", name: "title", widget: "string", required: true}
+      - {label: "Status", name: "status", widget: "select", options: ["Available", "Sold"], default: "Available", required: true}
+      - {label: "Price (e.g., 950)", name: "price", widget: "number", required: true}
+      - {label: "Main Photo", name: "image", widget: "image", required: true, hint: "A clear, high-quality photo of the finished piece."}
+      - {label: "Dimensions (W x D x H)", name: "dimensions", widget: "string", required: true}
+      - {label: "Description/Story", name: "body", widget: "markdown"}
+      - {label: "Category", name: "category", widget: "select", options: ["Chair", "Sofa", "Bench", "Headboard", "Other"], required: true}
+
+  # --- 2. Customer Reviews ---
+  - name: "reviews"
+    label: "Customer Reviews"
+    folder: "_reviews"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Customer Name", name: "customer_name", widget: "string", required: true}
+      - {label: "Piece/Service (e.g., Custom Velvet Sofa)", name: "piece_name", widget: "string", required: true}
+      - {label: "Review Text", name: "review_text", widget: "text", required: true}
+      - {label: "Date", name: "date", widget: "datetime", required: true}
+
+  # --- 3. Fabric Samples Gallery ---
+  - name: "fabric_samples"
+    label: "Fabric Sample Gallery"
+    folder: "_fabrics"
+    create: true
+    fields:
+      - {label: "Fabric Name/Style", name: "name", widget: "string", required: true}
+      - {label: "Type", name: "type", widget: "select", options: ["Velvet", "Linen", "Performance/Crypton", "Pattern", "Solid"], required: true}
+      - {label: "Sample Photo", name: "photo", widget: "image", required: true, hint: "A clear close-up of the fabric texture."}
+      - {label: "Supplier Name (Internal Note)", name: "supplier", widget: "string", required: false}
