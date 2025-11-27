@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Request | Zahra's Rebirth Boutique</title>
+    <style>
+        /* Basic CSS for a clean, boutique look */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-family: Georgia, serif;
+            color: #5d4037;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        h3 {
+            color: #795548;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        button {
+            background-color: #5d4037;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #795548;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Zahra's Rebirth Boutique</h2>
+    <h1>Start Your Furniture Revival</h1>
+    <p style="text-align: center; margin-bottom: 30px;">
+        Tell us about the piece you want revived. Please fill out all fields and upload photos for the fastest quote!
+    </p>
+
+    <form name="furniture-revival-quote" method="POST" data-netlify="true" enctype="multipart/form-data">
+
+        <input type="hidden" name="form-name" value="furniture-revival-quote" />
+
+        <h3>1. Your Contact Information</h3>
+        
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="location">Your Location (Triad Area)</label>
+            <select id="location" name="location" required>
+                <option value="">-- Select Your Location --</option>
+                <option value="Greensboro">Greensboro</option>
+                <option value="Winston-Salem">Winston-Salem</option>
+                <option value="High-Point">High Point</option>
+                <option value="Other-Triad">Other (Please Specify in Vision Box)</option>
+            </select>
+        </div>
+
+        <h3>2. The Piece Details</h3>
+
+        <div class="form-group">
+            <label for="pieceType">Type of Piece</label>
+            <select id="pieceType" name="pieceType" required>
+                <option value="">-- Select Piece Type --</option>
+                <option value="Sofa">Sofa (3+ Cushions)</option>
+                <option value="Loveseat">Loveseat (2 Cushions)</option>
+                <option value="Armchair">Armchair/Club Chair</option>
+                <option value="DiningSet">Dining Chair Set (Specify Count in Vision)</option>
+                <option value="Ottoman">Ottoman/Footstool</option>
+                <option value="Headboard">Headboard</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Approximate Age/Era (e.g., Mid-Century, Modern)</label>
+            <input type="text" id="age" name="age">
+        </div>
+
+        <div class="form-group">
+            <label>Current Frame Condition</label>
+            <div>
+                <input type="radio" id="condExcellent" name="frameCondition" value="Excellent" required> <label for="condExcellent" style="display: inline;">Excellent (Solid)</label><br>
+                <input type="radio" id="condGood" name="frameCondition" value="Good" required> <label for="condGood" style="display: inline;">Good (Minor wear)</label><br>
+                <input type="radio" id="condPoor" name="frameCondition" value="Poor" required> <label for="condPoor" style="display: inline;">Poor (Needs structural repair)</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Fabric Status</label>
+            <div>
+                <input type="radio" id="fabSourced" name="fabricStatus" value="Source for Me" required> <label for="fabSourced" style="display: inline;">I need fabric sourced (Full Service)</label><br>
+                <input type="radio" id="fabSupply" name="fabricStatus" value="Supply Own" required> <label for="fabSupply" style="display: inline;">I will supply the fabric</label>
+            </div>
+        </div>
+
+        <h3>3. Project Goals & Photos</h3>
+
+        <div class="form-group">
+            <label for="vision">Describe Your Vision (Colors, Textures, Changes to Foam/Shape, etc.)</label>
+            <textarea id="vision" name="vision" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="photos">Upload Photo(s) of Your Piece (Required - Allows 2-3 images)</label>
+            <input type="file" id="photos" name="photos" multiple required>
+        </div>
+
+        <button type="submit">Submit My Furniture Revival Request</button>
+    </form>
+</div>
+
+</body>
+</html>
