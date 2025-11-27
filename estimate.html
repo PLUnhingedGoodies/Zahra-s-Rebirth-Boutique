@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimate Your Project | Zahra's Rebirth Boutique</title>
+    <style>
+        /* Basic CSS for a clean, boutique look */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-family: Georgia, serif; /* Using a classic font */
+            color: #5d4037; /* Earthy brown color */
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #795548;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #fff;
+        }
+        .result {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #e8f5e9; /* Light green accent */
+            border: 2px solid #4caf50;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .result p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+        .result strong {
+            font-size: 1.5em;
+            color: #2e7d32;
+        }
+        .disclaimer {
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Project Starting Price Estimator</h2>
+
+    <div class="input-group">
+        <label for="pieceType">1. Select Your Piece Type/Complexity:</label>
+        <select id="pieceType" onchange="calculateEstimate()">
+            <option value="0">-- Select a Piece --</option>
+            <option value="75">A. Simple: Dining Seat Pad, Small Ottoman, Small Bench ($75 Base)</option>
+            <option value="300">B. Medium: Armchair, Headboard, Loveseat Cushions ($300 Base)</option>
+            <option value="750">C. Complex: Full Sofa (3+ Cushions), Tufted Bench, Skirted Chair ($750 Base)</option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label for="fabricGrade">2. Select Desired Fabric Grade:</label>
+        <select id="fabricGrade" onchange="calculateEstimate()">
+            <option value="1.0">-- Select a Fabric Grade --</option>
+            <option value="1.0">1. Standard Grade (Basic Solids, Performance Poly)</option>
+            <option value="1.3">2. Mid-Range Grade (Textured Linen, Velvet, Patterns)</option>
+            <option value="1.8">3. High-End Grade (Designer, Specialty, Crypton)</option>
+        </select>
+    </div>
+
+    <div class="result" id="estimateResult">
+        <p>Select your Piece Type and Fabric Grade above to see your estimated starting price.</p>
+    </div>
+
+    <p class="disclaimer">
+        *Disclaimer: This is a **LABOR-ONLY STARTING ESTIMATE** based on typical complexity. This does not include the final cost of fabric, foam, or any necessary frame repairs. A final quote requires the submission of the full Furniture Revival form.
+    </p>
+</div>
+
+<script>
+    function calculateEstimate() {
+        const piecePrice = parseFloat(document.getElementById('pieceType').value);
+        const fabricMultiplier = parseFloat(document.getElementById('fabricGrade').value);
+        const resultDiv = document.getElementById('estimateResult');
+
+        // Check if both selections have been made (value is not 0 or 1.0)
+        if (piecePrice === 0 || fabricMultiplier === 1.0) {
+            // If only one is selected, display the simple base price, or the prompt
+            if (piecePrice > 0 && fabricMultiplier === 1.0) {
+                 resultDiv.innerHTML = `<p>Base Labor Estimate (Standard Grade): <strong>$${piecePrice.toFixed(0)}</strong></p>
+                                        <p>Please select a fabric grade for the multiplier.</p>`;
+            } else {
+                 resultDiv.innerHTML = '<p>Select your Piece Type and Fabric Grade above to see your estimated starting price.</p>';
+            }
+            return;
+        }
+
+        const estimate = piecePrice * fabricMultiplier;
+        
+        resultDiv.innerHTML = `
+            <p>Your Estimated Starting Price (Labor Only):</p>
+            <strong>$${estimate.toFixed(0)}</strong>
+            <p style="font-size: 0.9em; margin-top: 10px;">(Base Labor $${piecePrice.toFixed(0)} x ${fabricMultiplier.toFixed(1)} Fabric Multiplier)</p>
+            <a href="/quote-request.html" style="display: inline-block; margin-top: 15px; padding: 10px 15px; background-color: #5d4037; color: white; text-decoration: none; border-radius: 4px;">Ready for a Full Quote? Start Your Furniture Revival</a>
+        `;
+    }
+</script>
+
+</body>
+</html>
