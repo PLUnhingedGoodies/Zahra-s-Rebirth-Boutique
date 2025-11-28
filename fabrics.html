@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabric Samples | Zahra's Rebirth Boutique</title>
+    <style>
+        /* Basic CSS for the fabric gallery structure */
+        body { font-family: Arial, sans-serif; margin: 0; background-color: #f8f8f8; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        h1 { font-family: Georgia, serif; color: #5d4037; text-align: center; margin-bottom: 5px; }
+        p.subtitle { text-align: center; color: #795548; margin-bottom: 30px; }
+        
+        /* Introductory Note Box */
+        .intro-box {
+            background-color: #fff3e0; /* Warm, soft color */
+            border-left: 5px solid #ff9800;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .intro-box p { margin: 5px 0; }
+
+        /* Fabric Category Filter Styling */
+        .category-filter { text-align: center; margin-bottom: 30px; padding: 10px; background-color: #eee; border-radius: 4px; }
+        .category-filter button { padding: 8px 15px; margin: 5px; background-color: #fff; border: 1px solid #ccc; cursor: pointer; border-radius: 4px; }
+        .category-filter button.active { background-color: #5d4037; color: white; border-color: #5d4037; }
+
+        /* Fabric Grid Styling (3-column layout) */
+        .fabric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .fabric-card {
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .fabric-card:hover {
+            transform: translateY(-5px);
+        }
+        .fabric-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover; /* Focus on the fabric sample */
+            display: block;
+        }
+        .card-details {
+            padding: 15px;
+        }
+        .card-details h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .card-details p {
+            font-size: 0.9em;
+            color: #795548;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .cta-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: #4CAF50; /* Green accent */
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>The Fabric Sample Collection</h1>
+    <p class="subtitle">Curated textiles for your bespoke furniture revival projects. We source only the best materials for our Artisan Upholstery services.</p>
+
+    <div class="intro-box">
+        <p>Browse a few of our most popular and exclusive fabrics below.</p>
+        <p><strong>To request a specific fabric or see more options, please start your quote!</strong></p>
+    </div>
+
+    <div class="category-filter">
+        <button class="active">All Samples</button>
+        <button>Velvet</button>
+        <button>Linen</button>
+        <button>Performance/Crypton</button>
+        <button>Pattern</button>
+        <button>Solid</button>
+    </div>
+    
+    <div class="fabric-grid" id="fabric-samples-grid">
+        
+        <div class="fabric-card" data-category="Velvet">
+            <img src="/assets/images/placeholder-velvet.jpg" alt="Sage Performance Velvet"> 
+            <div class="card-details">
+                <h3>Sage Performance Velvet</h3>
+                <p>Type: Velvet | Grade: High-End</p>
+                <a href="/quote-request.html" class="cta-button">Start Revival with this Fabric</a>
+            </div>
+        </div>
+        
+        <div class="fabric-card" data-category="Linen">
+            <img src="/assets/images/placeholder-linen.jpg" alt="Natural Belgian Linen">
+            <div class="card-details">
+                <h3>Natural Belgian Linen</h3>
+                <p>Type: Linen | Grade: Mid-Range</p>
+                <a href="/quote-request.html" class="cta-button">Start Revival with this Fabric</a>
+            </div>
+        </div>
+        
+        <div class="fabric-card" data-category="Performance/Crypton">
+            <img src="/assets/images/placeholder-crypton.jpg" alt="Pebble Crypton Weave">
+            <div class="card-details">
+                <h3>Pebble Crypton Weave</h3>
+                <p>Type: Performance/Crypton | Grade: High-End</p>
+                <a href="/quote-request.html" class="cta-button">Start Revival with this Fabric</a>
+            </div>
+        </div>
+        
+        </div>
+</div>
+
+</body>
+</html>
