@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews | Zahra's Rebirth Boutique</title>
+    <style>
+        /* Basic CSS for the Reviews Page */
+        body { font-family: Arial, sans-serif; margin: 0; background-color: #f8f8f8; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1 { font-family: Georgia, serif; color: #5d4037; text-align: center; margin-bottom: 5px; }
+        p.subtitle { text-align: center; color: #795548; margin-bottom: 40px; }
+        
+        /* Review Card Styling */
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        .review-card {
+            background-color: #ffffff;
+            border-left: 5px solid #5d4037; /* Boutique accent line */
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .quote-icon {
+            font-size: 2.5em;
+            color: #ccc;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            opacity: 0.5;
+            font-family: serif;
+        }
+        .review-text {
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            padding-top: 15px; /* Space below the quote icon */
+            color: #555;
+        }
+        .customer-info {
+            font-weight: bold;
+            color: #333;
+            border-top: 1px dashed #eee;
+            padding-top: 10px;
+        }
+        .piece-info {
+            font-size: 0.9em;
+            color: #795548;
+            margin-top: 5px;
+        }
+        .cta-box {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #e8f5e9; /* Light green accent */
+            border-radius: 8px;
+        }
+        .cta-box a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #5d4037;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .cta-box a:hover {
+            background-color: #795548;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>From Our Happy Customers</h1>
+    <p class="subtitle">Client endorsements for our Artisan Upholstery and Curated Seating projects across the Triad.</p>
+
+    <div class="review-grid" id="customer-reviews-grid">
+        
+        <div class="review-card">
+            <span class="quote-icon">“</span>
+            <p class="review-text">Zahra’s Rebirth Boutique completely transformed my grandmother’s old armchair. The quality of the stitching and the new velvet fabric is absolutely impeccable. It’s now the centerpiece of my living room!</p>
+            <div class="customer-info">Sarah T.</div>
+            <div class="piece-info">Piece: Custom Armchair Revival</div>
+        </div>
+        
+        <div class="review-card">
+            <span class="quote-icon">“</span>
+            <p class="review-text">We purchased the Mid-Century Sofa from the collection gallery, and it was delivered flawlessly. The fabric is durable, the frame is solid, and the price was excellent for the quality. Highly recommend!</p>
+            <div class="customer-info">Michael and Lena W.</div>
+            <div class="piece-info">Piece: Flipped/Curated Seating Purchase</div>
+        </div>
+        
+        <div class="review-card">
+            <span class="quote-icon">“</span>
+            <p class="review-text">The upholstery work was finished ahead of schedule! They helped me choose the perfect performance fabric, and the detail work on the piping is flawless. True professionals.</p>
+            <div class="customer-info">Jessica C. (High Point)</div>
+            <div class="piece-info">Piece: Dining Chair Upholstery</div>
+        </div>
+        
+        </div>
+
+    <div class="cta-box">
+        <h3>Ready to Start Your Own Revival?</h3>
+        <p>Get the details and pricing for your custom upholstery project.</p>
+        <a href="/quote-request.html">Start Your Furniture Revival Request</a>
+    </div>
+</div>
+
+</body>
+</html>
