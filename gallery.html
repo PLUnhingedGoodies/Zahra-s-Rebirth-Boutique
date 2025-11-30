@@ -4,12 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collection Gallery | Zahra's Rebirth Boutique</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
         /* Basic CSS for the gallery structure */
-        body { font-family: Arial, sans-serif; margin: 0; background-color: #f8f8f8; }
+        body { font-family: 'Roboto', sans-serif; margin: 0; background-color: #ffffff; color: #333; }
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         h1 { font-family: Georgia, serif; color: #5d4037; text-align: center; margin-bottom: 5px; }
         p.subtitle { text-align: center; color: #795548; margin-bottom: 30px; }
+
+        /* Navigation */
+        .header {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 15px 0; 
+            border-bottom: 1px solid #eee;
+        }
+        .logo-text { font-family: Georgia, serif; font-size: 1.5em; color: #5d4037; font-weight: bold; }
+        .nav-links a { text-decoration: none; color: #795548; margin-left: 20px; font-size: 0.95em; }
+
+        /* General styles for consistent look (copied from index.html) */
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .cta-primary {
+            background-color: #5d4037; /* Earthy Brown */
+            color: white;
+            border: 2px solid #5d4037;
+        }
+        .cta-secondary {
+            background-color: transparent;
+            color: #5d4037;
+            border: 2px solid #5d4037;
+        }
         
         /* Filter and Sort Bar Styling */
         .filter-bar { text-align: center; margin-bottom: 30px; padding: 10px; background-color: #eee; border-radius: 4px; }
@@ -53,7 +89,27 @@
 <body>
 
 <div class="container">
-    <h1>The Collection Gallery</h1>
+    <div class="header">
+        <div class="logo-text">
+            <a href="/">
+                <img 
+                    src="/assets/images/ZRB logo.png" 
+                    alt="Zahra's Rebirth Boutique Logo" 
+                    style="max-height: 80px; width: auto;" 
+                >
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="gallery.html">Collection Gallery</a>
+            <a href="fabrics.html">Fabrics</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="quote-request.html">Quote</a>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="padding: 50px 0;>
+    <h1 style="text-align: center;">The Collection Gallery</h1>
     <p class="subtitle">Revived Upholstery & Curated Seating for a New Chapter. Every piece is revived with *Artisan Upholstery* and ready for immediate placement in your Triad home.</p>
 
     <div class="filter-bar">
@@ -84,6 +140,17 @@
         </a>
         
         </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="quote-request.html" class="cta-button cta-primary">Request a Custom Upholstery Quote</a>
+    </div>
+
+</div>
+
+
+<div class="container" style="padding: 30px 0; text-align: center; border-top: 1px solid #eee;">
+    <p>© 2025 Zahra's Rebirth Boutique. Revived Upholstery & Curated Seating, The Triad.</p>
+    <a href="links.html" style="color: #795548; font-size: 0.9em;">Partner & Resource Links</a>
 </div>
 
 </body>
