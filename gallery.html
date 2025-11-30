@@ -15,7 +15,15 @@
         
         /* Heading Styles */
         h1 { font-family: Georgia, serif; color: #5d4037; text-align: center; margin-bottom: 5px; }
-        p.subtitle { text-align: center; color: #795548; margin-bottom: 30px; }
+        
+        /* FIX APPLIED HERE: Added wrapping properties */
+        p.subtitle { 
+            text-align: center; 
+            color: #795548; 
+            margin-bottom: 30px; 
+            word-wrap: break-word; 
+            overflow-wrap: break-word;
+        }
 
         /* Navigation */
         .header { 
@@ -105,7 +113,7 @@
 
 <div class="container" style="padding: 50px 0;">
     <h1>The Collection Gallery</h1>
-    <p class="subtitle">Revived Upholstery & Curated Seating for a New Chapter. Every piece is revived with "Artisan Upholstery" and ready for immedi...</p>
+    <p class="subtitle">Revived Upholstery & Curated Seating for a New Chapter. Every piece is revived with "Artisan Upholstery" and ready for immediate placement in your Triad home.</p>
 
     <div class="filter-bar">
         <button class="active">Available Now</button>
