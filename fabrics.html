@@ -1,19 +1,69 @@
+Thank you for providing the full code for your fabrics.html page! This is excellent—you have the unique content and styling already done, which saves a lot of time.
+
+I have merged your unique fabric content with the essential global header, styles, and footer from your index.html file. I have also corrected the conflicting global CSS rules (like the font-family and basic colors) to match your working homepage.
+
+Here is the final, correct, copy-and-pasteable code for your fabrics.html.
+
+📄 Final Code for fabrics.html
+Action: Go to your GitHub repository, edit fabrics.html on the preview branch, and replace all its current content with the code below.
+
+HTML
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabric Samples | Zahra's Rebirth Boutique</title>
+    <title>Fabrics | Zahra's Rebirth Boutique</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Basic CSS for the fabric gallery structure */
-        body { font-family: Arial, sans-serif; margin: 0; background-color: #f8f8f8; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        /* --- GLOBAL STYLES (Copied from index.html) --- */
+        body { font-family: 'Roboto', sans-serif; margin: 0; background-color: #ffffff; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; } /* Changed padding to 0 20px */
+        
+        /* Heading Styles */
         h1 { font-family: Georgia, serif; color: #5d4037; text-align: center; margin-bottom: 5px; }
         p.subtitle { text-align: center; color: #795548; margin-bottom: 30px; }
-        
+
+        /* Navigation */
+        .header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 15px 0; 
+            border-bottom: 1px solid #eee;
+        }
+        .logo-text { font-family: Georgia, serif; font-size: 1.5em; color: #5d4037; font-weight: bold; }
+        .nav-links a { text-decoration: none; color: #795548; margin-left: 20px; font-size: 0.95em; }
+
+        /* General CTA Button (Used in footer and content) */
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .cta-primary {
+            background-color: #5d4037;
+            color: white;
+            border: 2px solid #5d4037;
+        }
+        .cta-secondary {
+            background-color: transparent;
+            color: #5d4037;
+            border: 2px solid #5d4037;
+        }
+
+        /* --- FABRIC-SPECIFIC STYLES (Your unique code) --- */
         /* Introductory Note Box */
         .intro-box {
-            background-color: #fff3e0; /* Warm, soft color */
+            background-color: #fff3e0;
             border-left: 5px solid #ff9800;
             padding: 15px 20px;
             margin-bottom: 30px;
@@ -47,7 +97,7 @@
         .fabric-card img {
             width: 100%;
             height: 250px;
-            object-fit: cover; /* Focus on the fabric sample */
+            object-fit: cover;
             display: block;
         }
         .card-details {
@@ -63,21 +113,39 @@
             text-transform: uppercase;
             font-weight: bold;
         }
-        .cta-button {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 15px;
-            background-color: #4CAF50; /* Green accent */
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 0.9em;
+        /* Override for the small fabric CTA button to ensure correct colors */
+        .fabric-card .cta-button { 
+             padding: 8px 15px;
+             background-color: #5d4037; /* Brown accent for consistency */
+             color: white;
+             font-size: 0.9em;
+             margin-bottom: 15px;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <div class="header">
+        <div class="logo-text">
+            <a href="/">
+                <img 
+                    src="/assets/images/ZRB logo.png" 
+                    alt="Zahra's Rebirth Boutique Logo" 
+                    style="max-height: 80px; width: auto;" 
+                >
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="gallery.html">Collection Gallery</a>
+            <a href="fabrics.html">Fabrics</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="quote-request.html">Quote</a>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="padding: 50px 0;"> 
     <h1>The Fabric Sample Collection</h1>
     <p class="subtitle">Curated textiles for your bespoke furniture revival projects. We source only the best materials for our Artisan Upholstery services.</p>
 
@@ -124,7 +192,12 @@
             </div>
         </div>
         
-        </div>
+    </div>
+</div>
+
+<div class="container" style="padding: 30px 0; text-align: center; border-top: 1px solid #eee;">
+    <p>© 2025 Zahra's Rebirth Boutique. Revived Upholstery & Curated Seating, The Triad.</p>
+    <a href="links.html" style="color: #795548; font-size: 0.9em;">Partner & Resource Links</a>
 </div>
 
 </body>
