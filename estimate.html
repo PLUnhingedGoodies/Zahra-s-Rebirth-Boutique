@@ -3,132 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estimate Your Project | Zahra's Rebirth Boutique</title>
+    <title>Price Estimation | Zahra's Rebirth Boutique</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Basic CSS for a clean, boutique look */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f8f8f8;
-            color: #333;
+        /* --- GLOBAL STYLES (Copied from index.html) --- */
+        body { font-family: 'Roboto', sans-serif; margin: 0; background-color: #ffffff; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; } 
+        
+        /* Heading Styles */
+        h1 { font-family: Georgia, serif; color: #5d4037; text-align: center; margin-bottom: 5px; }
+        p.subtitle { text-align: center; color: #795548; margin-bottom: 30px; }
+
+        /* Navigation */
+        .header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 15px 0; 
+            border-bottom: 1px solid #eee;
         }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            font-family: Georgia, serif; /* Using a classic font */
-            color: #5d4037; /* Earthy brown color */
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .input-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
+        .logo-text { font-family: Georgia, serif; font-size: 1.5em; color: #5d4037; font-weight: bold; }
+        .nav-links a { text-decoration: none; color: #795548; margin-left: 20px; font-size: 0.95em; }
+
+        /* General CTA Button */
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            text-decoration: none;
+            border-radius: 4px;
             font-weight: bold;
-            color: #795548;
+            transition: background-color 0.3s;
         }
-        select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
+        .cta-primary {
+            background-color: #5d4037;
+            color: white;
+            border: 2px solid #5d4037;
+        }
+        .cta-secondary {
+            background-color: transparent;
+            color: #5d4037;
+            border: 2px solid #5d4037;
+        }
+
+        /* --- ESTIMATE-SPECIFIC STYLES (Placeholder Structure) --- */
+        .estimate-calculator {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 30px;
             background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            text-align: left;
         }
-        .result {
+        .estimate-calculator h2 {
+            color: #5d4037;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .estimate-calculator .result {
             margin-top: 30px;
-            padding: 15px;
-            background-color: #e8f5e9; /* Light green accent */
-            border: 2px solid #4caf50;
+            padding: 20px;
+            background-color: #f0fff0; /* Light green accent */
+            border: 1px solid #c8e6c9;
             border-radius: 4px;
             text-align: center;
         }
-        .result p {
-            margin: 0;
-            font-size: 1.1em;
-        }
-        .result strong {
-            font-size: 1.5em;
-            color: #2e7d32;
-        }
-        .disclaimer {
-            font-size: 0.8em;
-            color: #888;
-            margin-top: 20px;
-            text-align: center;
+        .estimate-calculator .result p {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #4CAF50;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>Project Starting Price Estimator</h2>
-
-    <div class="input-group">
-        <label for="pieceType">1. Select Your Piece Type/Complexity:</label>
-        <select id="pieceType" onchange="calculateEstimate()">
-            <option value="0">-- Select a Piece --</option>
-            <option value="75">A. Simple: Dining Seat Pad, Small Ottoman, Small Bench ($75 Base)</option>
-            <option value="300">B. Medium: Armchair, Headboard, Loveseat Cushions ($300 Base)</option>
-            <option value="750">C. Complex: Full Sofa (3+ Cushions), Tufted Bench, Skirted Chair ($750 Base)</option>
-        </select>
+    <div class="header">
+        <div class="logo-text">
+            <a href="/">
+                <img 
+                    src="/assets/images/ZRB logo.png" 
+                    alt="Zahra's Rebirth Boutique Logo" 
+                    style="max-height: 80px; width: auto;" 
+                >
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="gallery.html">Collection Gallery</a>
+            <a href="fabrics.html">Fabrics</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="quote-request.html">Quote</a>
+        </div>
     </div>
-
-    <div class="input-group">
-        <label for="fabricGrade">2. Select Desired Fabric Grade:</label>
-        <select id="fabricGrade" onchange="calculateEstimate()">
-            <option value="1.0">-- Select a Fabric Grade --</option>
-            <option value="1.0">1. Standard Grade (Basic Solids, Performance Poly)</option>
-            <option value="1.3">2. Mid-Range Grade (Textured Linen, Velvet, Patterns)</option>
-            <option value="1.8">3. High-End Grade (Designer, Specialty, Crypton)</option>
-        </select>
-    </div>
-
-    <div class="result" id="estimateResult">
-        <p>Select your Piece Type and Fabric Grade above to see your estimated starting price.</p>
-    </div>
-
-    <p class="disclaimer">
-        *Disclaimer: This is a **LABOR-ONLY STARTING ESTIMATE** based on typical complexity. This does not include the final cost of fabric, foam, or any necessary frame repairs. A final quote requires the submission of the full Furniture Revival form.
-    </p>
 </div>
 
-<script>
-    function calculateEstimate() {
-        const piecePrice = parseFloat(document.getElementById('pieceType').value);
-        const fabricMultiplier = parseFloat(document.getElementById('fabricGrade').value);
-        const resultDiv = document.getElementById('estimateResult');
+<div class="container" style="padding: 50px 0;"> 
+    <h1>Upholstery Price Estimate</h1>
+    <p class="subtitle">Get a quick starting labor-only price estimate for your project. Final cost requires a detailed quote.</p>
 
-        // Check if both selections have been made (value is not 0 or 1.0)
-        if (piecePrice === 0 || fabricMultiplier === 1.0) {
-            // If only one is selected, display the simple base price, or the prompt
-            if (piecePrice > 0 && fabricMultiplier === 1.0) {
-                 resultDiv.innerHTML = `<p>Base Labor Estimate (Standard Grade): <strong>$${piecePrice.toFixed(0)}</strong></p>
-                                        <p>Please select a fabric grade for the multiplier.</p>`;
-            } else {
-                 resultDiv.innerHTML = '<p>Select your Piece Type and Fabric Grade above to see your estimated starting price.</p>';
-            }
-            return;
-        }
-
-        const estimate = piecePrice * fabricMultiplier;
+    <div class="estimate-calculator">
+        <h2>Labor Estimate Calculator</h2>
+        <p>***Placeholder for interactive form elements to calculate labor***</p>
         
-        resultDiv.innerHTML = `
-            <p>Your Estimated Starting Price (Labor Only):</p>
-            <strong>$${estimate.toFixed(0)}</strong>
-            <p style="font-size: 0.9em; margin-top: 10px;">(Base Labor $${piecePrice.toFixed(0)} x ${fabricMultiplier.toFixed(1)} Fabric Multiplier)</p>
-            <a href="/quote-request.html" style="display: inline-block; margin-top: 15px; padding: 10px 15px; background-color: #5d4037; color: white; text-decoration: none; border-radius: 4px;">Ready for a Full Quote? Start Your Furniture Revival</a>
-        `;
-    }
-</script>
+        <div class="result">
+            <p>Estimated Labor Cost: $XXX.00 - $XXX.00</p>
+            <a href="quote-request.html" class="cta-button cta-primary">Request a Detailed Quote</a>
+        </div>
+        
+    </div>
+</div>
+
+<div class="container" style="padding: 30px 0; text-align: center; border-top: 1px solid #eee;">
+    <p>© 2025 Zahra's Rebirth Boutique. Revived Upholstery & Curated Seating, The Triad.</p>
+    <a href="links.html" style="color: #795548; font-size: 0.9em;">Partner & Resource Links</a>
+</div>
 
 </body>
 </html>

@@ -3,75 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partner Links & Resources | Zahra's Rebirth Boutique</title>
+    <title>Partners & Resources | Zahra's Rebirth Boutique</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Basic CSS for a clean links page */
-        body { font-family: Arial, sans-serif; margin: 0; background-color: #f8f8f8; color: #333; }
-        .container { max-width: 700px; margin: 0 auto; padding: 40px 20px; }
-        h1 { font-family: Georgia, serif; color: #5d4037; text-align: center; margin-bottom: 5px; }
-        p.subtitle { text-align: center; color: #795548; margin-bottom: 40px; }
+        /* --- GLOBAL STYLES (Copied from index.html) --- */
+        body { font-family: 'Roboto', sans-serif; margin: 0; background-color: #ffffff; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; } 
         
-        .link-list {
-            list-style: none;
-            padding: 0;
+        /* Heading Styles */
+        h1 { font-family: Georgia, serif; color: #5d4037; text-align: center; margin-bottom: 5px; }
+        p.subtitle { text-align: center; color: #795548; margin-bottom: 30px; }
+
+        /* Navigation */
+        .header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 15px 0; 
+            border-bottom: 1px solid #eee;
         }
-        .link-item {
-            background-color: #fff;
-            margin-bottom: 15px;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-        .link-item a {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #5d4037;
+        .logo-text { font-family: Georgia, serif; font-size: 1.5em; color: #5d4037; font-weight: bold; }
+        .nav-links a { text-decoration: none; color: #795548; margin-left: 20px; font-size: 0.95em; }
+
+        /* General CTA Button (Used in footer and content) */
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
             text-decoration: none;
-            display: block;
-            margin-bottom: 5px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
         }
-        .link-item p {
-            margin: 0;
-            font-size: 0.9em;
-            color: #555;
+        .cta-primary {
+            background-color: #5d4037;
+            color: white;
+            border: 2px solid #5d4037;
         }
-        .back-home {
+        .cta-secondary {
+            background-color: transparent;
+            color: #5d4037;
+            border: 2px solid #5d4037;
+        }
+
+        /* --- LINKS-SPECIFIC STYLES (Placeholder Structure) --- */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .link-card {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             text-align: center;
-            margin-top: 30px;
         }
-        .back-home a {
+        .link-card h3 {
+            color: #5d4037;
+            margin-top: 0;
+        }
+        .link-card a {
             color: #795548;
             text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Our Triad Partners</h1>
-    <p class="subtitle">A curated list of local businesses and resources we trust for custom frame repair, wood restoration, and home finishing services.</p>
-
-    <ul class="link-list">
-        <li class="link-item">
-            <a href="https://www.example.com/wood-restoration" target="_blank">Triad Wood Restoration Experts</a>
-            <p>Trusted specialists for structural wood repair and frame refinishing services for antique pieces.</p>
-        </li>
-
-        <li class="link-item">
-            <a href="https://www.example.com/interior-design" target="_blank">Local Interior Design Firm</a>
-            <p>For clients needing full-room design or consulting on fabric and color pairings.</p>
-        </li>
-
-        <li class="link-item">
-            <a href="https://www.example.com/furniture-delivery" target="_blank">Greensboro White-Glove Movers</a>
-            <p>Reliable and insured service for local furniture pickup and delivery.</p>
-        </li>
-
-        </ul>
-
-    <div class="back-home">
-        <a href="index.html">← Back to Zahra's Rebirth Boutique Homepage</a>
+    <div class="header">
+        <div class="logo-text">
+            <a href="/">
+                <img 
+                    src="/assets/images/ZRB logo.png" 
+                    alt="Zahra's Rebirth Boutique Logo" 
+                    style="max-height: 80px; width: auto;" 
+                >
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="gallery.html">Collection Gallery</a>
+            <a href="fabrics.html">Fabrics</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="quote-request.html">Quote</a>
+        </div>
     </div>
+</div>
+
+<div class="container" style="padding: 50px 0;"> 
+    <h1>Partners & Resource Links</h1>
+    <p class="subtitle">A list of recommended local partners and industry resources.</p>
+
+    <div class="links-grid">
+        
+        <div class="link-card">
+            <h3>Local Furniture Repair</h3>
+            <p>For structural repairs before upholstery.</p>
+            <a href="#">Visit Repair Shop Name →</a>
+        </div>
+        
+        <div class="link-card">
+            <h3>Textile Manufacturer</h3>
+            <p>Our primary source for high-end performance fabrics.</p>
+            <a href="#">Visit Fabric House Name →</a>
+        </div>
+
+        <div class="link-card">
+            <h3>Custom Woodworking</h3>
+            <p>For custom frame building and restoration.</p>
+            <a href="#">Visit Wood Shop Name →</a>
+        </div>
+        
+    </div>
+
+</div>
+
+<div class="container" style="padding: 30px 0; text-align: center; border-top: 1px solid #eee;">
+    <p>© 2025 Zahra's Rebirth Boutique. Revived Upholstery & Curated Seating, The Triad.</p>
+    <a href="links.html" style="color: #795548; font-size: 0.9em;">Partner & Resource Links</a>
 </div>
 
 </body>
