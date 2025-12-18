@@ -4,66 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quote Request | Zahra's Rebirth Boutique</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Basic CSS for a clean, boutique look */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f8f8f8;
-            color: #333;
+        /* --- GLOBAL STYLES (Copied from index.html) --- */
+        body { font-family: 'Roboto', sans-serif; margin: 0; background-color: #ffffff; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; } 
+        
+        /* Heading Styles */
+        h1 { font-family: Georgia, serif; color: #5d4037; text-align: center; margin-bottom: 5px; }
+        p.subtitle { text-align: center; color: #795548; margin-bottom: 30px; }
+
+        /* Navigation */
+        .header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 15px 0; 
+            border-bottom: 1px solid #eee;
         }
-        .container {
+        .logo-text { font-family: Georgia, serif; font-size: 1.5em; color: #5d4037; font-weight: bold; }
+        .nav-links a { text-decoration: none; color: #795548; margin-left: 20px; font-size: 0.95em; }
+
+        /* General CTA Button */
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .cta-primary {
+            background-color: #5d4037;
+            color: white;
+            border: 2px solid #5d4037;
+        }
+        .cta-secondary {
+            background-color: transparent;
+            color: #5d4037;
+            border: 2px solid #5d4037;
+        }
+
+        /* --- QUOTE FORM SPECIFIC STYLES (Placeholder Structure) --- */
+        .quote-form-container {
             max-width: 700px;
             margin: 0 auto;
             padding: 30px;
-            background-color: #fff;
+            background-color: #fcfcfc;
+            border: 1px solid #eee;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            text-align: left;
         }
-        h2 {
-            font-family: Georgia, serif;
-            color: #5d4037;
-            text-align: center;
-            margin-bottom: 5px;
-        }
-        h3 {
-            color: #795548;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 5px;
-            margin-top: 25px;
-            margin-bottom: 15px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
+        .quote-form-container label {
             display: block;
+            margin-top: 15px;
             margin-bottom: 5px;
             font-weight: bold;
+            color: #5d4037;
         }
-        input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+        .quote-form-container input[type="text"],
+        .quote-form-container input[type="email"],
+        .quote-form-container textarea,
+        .quote-form-container select {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            box-sizing: border-box;
+            box-sizing: border-box; /* Ensures padding doesn't widen the input */
+            font-family: inherit;
         }
-        textarea {
+        .quote-form-container textarea {
             resize: vertical;
-            height: 100px;
         }
-        button {
+        .form-submit-button {
+            display: block;
+            width: 100%;
+            margin-top: 25px;
+            padding: 15px;
             background-color: #5d4037;
             color: white;
-            padding: 12px 20px;
             border: none;
             border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
             font-size: 1.1em;
-            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-        button:hover {
+        .form-submit-button:hover {
             background-color: #795548;
         }
     </style>
@@ -71,96 +102,62 @@
 <body>
 
 <div class="container">
-    <h2>Zahra's Rebirth Boutique</h2>
-    <h1>Start Your Furniture Revival</h1>
-    <p style="text-align: center; margin-bottom: 30px;">
-        Tell us about the piece you want revived. Please fill out all fields and upload photos for the fastest quote!
-    </p>
-
-    <form name="furniture-revival-quote" method="POST" data-netlify="true" enctype="multipart/form-data">
-
-        <input type="hidden" name="form-name" value="furniture-revival-quote" />
-
-        <h3>1. Your Contact Information</h3>
-        
-        <div class="form-group">
-            <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" name="fullName" required>
+    <div class="header">
+        <div class="logo-text">
+            <a href="/">
+                <img 
+                    src="/assets/images/ZRB logo.png" 
+                    alt="Zahra's Rebirth Boutique Logo" 
+                    style="max-height: 80px; width: auto;" 
+                >
+            </a>
         </div>
-        
-        <div class="form-group">
+        <div class="nav-links">
+            <a href="gallery.html">Collection Gallery</a>
+            <a href="fabrics.html">Fabrics</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="quote-request.html">Quote</a>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="padding: 50px 0;"> 
+    <h1>Start Your Custom Upholstery Quote</h1>
+    <p class="subtitle">Tell us about your furniture piece and desired materials to begin the revival process.</p>
+
+    <div class="quote-form-container">
+        <form action="/submit-quote" method="POST">
+            
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+
             <label for="email">Email Address</label>
             <input type="email" id="email" name="email" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="location">Your Location (Triad Area)</label>
-            <select id="location" name="location" required>
-                <option value="">-- Select Your Location --</option>
-                <option value="Greensboro">Greensboro</option>
-                <option value="Winston-Salem">Winston-Salem</option>
-                <option value="High-Point">High Point</option>
-                <option value="Other-Triad">Other (Please Specify in Vision Box)</option>
+            
+            <label for="furniture_type">Type of Furniture</label>
+            <select id="furniture_type" name="furniture_type" required>
+                <option value="">-- Select One --</option>
+                <option value="chair">Chair/Armchair</option>
+                <option value="sofa">Sofa/Couch</option>
+                <option value="ottoman">Ottoman/Bench</option>
+                <option value="other">Other</option>
             </select>
-        </div>
 
-        <h3>2. The Piece Details</h3>
+            <label for="description">Project Description & Goals</label>
+            <textarea id="description" name="description" rows="5" placeholder="e.g., I want a custom velvet upholstery for a family heirloom armchair. I prefer a deep blue or green fabric." required></textarea>
 
-        <div class="form-group">
-            <label for="pieceType">Type of Piece</label>
-            <select id="pieceType" name="pieceType" required>
-                <option value="">-- Select Piece Type --</option>
-                <option value="Sofa">Sofa (3+ Cushions)</option>
-                <option value="Loveseat">Loveseat (2 Cushions)</option>
-                <option value="Armchair">Armchair/Club Chair</option>
-                <option value="DiningSet">Dining Chair Set (Specify Count in Vision)</option>
-                <option value="Ottoman">Ottoman/Footstool</option>
-                <option value="Headboard">Headboard</option>
-                <option value="Other">Other</option>
-            </select>
-        </div>
+            <label for="fabric_preference">Fabric Preference (Optional)</label>
+            <input type="text" id="fabric_preference" name="fabric_preference" placeholder="e.g., Performance velvet, natural linen, leather, etc.">
+            
+            <button type="submit" class="form-submit-button">Submit Quote Request</button>
+        </form>
+    </div>
+    
+</div>
 
-        <div class="form-group">
-            <label for="age">Approximate Age/Era (e.g., Mid-Century, Modern)</label>
-            <input type="text" id="age" name="age">
-        </div>
-
-        <div class="form-group">
-            <label>Current Frame Condition</label>
-            <div>
-                <input type="radio" id="condExcellent" name="frameCondition" value="Excellent" required> <label for="condExcellent" style="display: inline;">Excellent (Solid)</label><br>
-                <input type="radio" id="condGood" name="frameCondition" value="Good" required> <label for="condGood" style="display: inline;">Good (Minor wear)</label><br>
-                <input type="radio" id="condPoor" name="frameCondition" value="Poor" required> <label for="condPoor" style="display: inline;">Poor (Needs structural repair)</label>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label>Fabric Status</label>
-            <div>
-                <input type="radio" id="fabSourced" name="fabricStatus" value="Source for Me" required> <label for="fabSourced" style="display: inline;">I need fabric sourced (Full Service)</label><br>
-                <input type="radio" id="fabSupply" name="fabricStatus" value="Supply Own" required> <label for="fabSupply" style="display: inline;">I will supply the fabric</label>
-            </div>
-        </div>
-
-        <h3>3. Project Goals & Photos</h3>
-
-        <div class="form-group">
-            <label for="vision">Describe Your Vision (Colors, Textures, Changes to Foam/Shape, etc.)</label>
-            <textarea id="vision" name="vision" required></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="photos">Upload Photo(s) of Your Piece (Required - Allows 2-3 images)</label>
-            <input type="file" id="photos" name="photos" multiple required>
-        </div>
-
-        <button type="submit">Submit My Furniture Revival Request</button>
-    </form>
+<div class="container" style="padding: 30px 0; text-align: center; border-top: 1px solid #eee;">
+    <p>© 2025 Zahra's Rebirth Boutique. Revived Upholstery & Curated Seating, The Triad.</p>
+    <a href="links.html" style="color: #795548; font-size: 0.9em;">Partner & Resource Links</a>
 </div>
 
 </body>
